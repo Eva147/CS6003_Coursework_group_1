@@ -1,31 +1,31 @@
 ID, name, description, price, quantity, category, image 
-001, Multi-purpose Cleaner Spray, "Can be used for everyday cleaning, 500ml", £3, 10, household cleaning, c:\Users\user\Downloads\001.jpg
-002, Glass & Window Cleaner, "Leaving your windows and glass surfaces shining, 450ml", £3.50, 10, household cleaning, https://images.pexels.com/photos/7513057/pexels-photo-7513057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
-003, Disinfectant Wipes, "Removes up to 99,99% bacteria from surfaces", £2.50, 30, household cleaning, c:\Users\user\Downloads\003.jpg
-004, Microfiber cleaning cloth, "pack of 12, size 32 x 32", £11.99, 50, household cleaning, c:\Users\user\Downloads\004.jpg
-005, Floor Cleaner, "Residue-free surface cleaner", £1.90, 100, household cleaning, https://images.pexels.com/photos/6197116/pexels-photo-6197116.jpeg?auto=compress&cs=tinysrgb&w=800
-006, Kitchen Cleaner, "Daily kitchen cleaner, 750 ml", £2.75, 35, household cleaning, https://images.pexels.com/photos/9462298/pexels-photo-9462298.jpeg?auto=compress&cs=tinysrgb&w=800
-007, kitchen roll,"Kitchen Roll Extra absorpent", £3.65, 50, household cleaning, c:\Users\user\Downloads\007.jpg
-008, sponge, "Non-scratch sponge", £4.80, 25, household cleaning, "C:\Users\user\Downloads\008.jpg"
-009, washing up liquid, "Washing up liquid, 500ml", £2.25, 100, household cleaning, c:\Users\user\Downloads\009.jpg
-010, Floor wipes, "Wet Floor Cleaning Wipes, Pack of 20", £4.50, 100, household cleaning, c:\Users\user\Downloads\010.jpg
-011, Soap, "Luxuary bar of soap", £3.65, 100, Bathing & Toiletries, c:\Users\user\Downloads\011.jpg
-012, Shampoo, "Hydrating Scalp Shampoo", £2.95, 100, Bathing & Toiletries, c:\Users\user\Downloads\012.jpg
-013, Toilet Roll, "Toilet Roll, Pack of 3", £4.50, 100, Bathing & Toiletries, c:\Users\user\Downloads\013.jpg
-014, Washing Hand Soap, "Washing hand soap, 300ml", £2.85, 100, Bathing & Toiletries, c:\Users\user\Downloads\014.jpg
-015, Bathroom Cleaner, "Clean Living, Bathroom Cleaner Set", £5.50, 100, Bathing & Toiletries, c:\Users\user\Downloads\015.jpg
-016, Bleach, "Killing 99.99% Bacteria, Clorox 500ml", £2.80, 100, Bathing & Toiletries, c:\Users\user\Downloads\016.jpg
-017, Toilet Cleaning Set, "Toilet Cleaning Set", £6.50, 100, Bathing & Toiletries, c:\Users\user\Downloads\017.jpg
-018, Box of Tissues, "Box of Tissues, 100 pcs", £2.40, 100, Bathing & Toiletries, c:\Users\user\Downloads\018.jpg
-019, Bathroom Spray, "Bathroom Spray, 350ml", £3.20, 100, Bathing & Toiletries, c:\Users\user\Downloads\019.jpg
-020, Hand sanitiser, "Hand Sanitiser, 50ml", £1.00, 100, Bathing & Toiletries, c:\Users\user\Downloads\020.jpg
-021, Dustpan & Brush, "Durable Dustpan & Brush", £3, 100, Cleaning Tools, c:\Users\user\Downloads\021.jpg
-022, Broom & packer, "Broom & Packer", £4, 100, Cleaning Tools, c:\Users\user\Downloads\022.jpg
-023, Surgical mask, "Surgical mask/Cleaning mask, pack of 50", £10, 100, Cleaning Tools, c:\Users\user\Downloads\023.jpg
-024, Reusable Bin Bag, "Reusable Bin Bag, pack of 20", £8.50, 100, Cleaning Tools, c:\Users\user\Downloads\024.jpg
-025, Cleaning Apron, "Cleaning Apron", £1.35, 100, Cleaning Tools, c:\Users\user\Downloads\025.avif
-026, Hoover, "Heavy Duty Hoover", £23.65, 100, Cleaning Tools, c:\Users\user\Downloads\026.avif
-027, Cleaning Gloves, "Cleaning Gloves", £2.35, 100, Cleaning Tools, c:\Users\user\Downloads\027.jpg
-028, Mop & Bucket, "Mop & Bucket", £5, 100, Cleaning Tools, c:\Users\user\Downloads\028.jpg
-029, Duster Cleaning Set, "Duster Cleaning set", £4, 150, Cleaning Tools, c:\Users\user\Downloads\029.avif
-030, Laundry Cleaning Set, "Laudry Cleaning Set," £5.50, 100, Cleaning Tools, c:\Users\user\Downloads\030.jpg
+001, Multi-purpose Cleaner Spray, "Can be used for everyday cleaning, 500ml", £3, 10, household cleaning, "data/images/001.jpg"
+002, Glass & Window Cleaner, "Leaving your windows and glass surfaces shining, 450ml, pack of 3", £3.50, 10, household cleaning, "data/images/002.avif"
+003, Disinfectant Wipes, "Removes up to 99,99% bacteria from surfaces", £2.50, 30, household cleaning, "data/images/003.jpg"
+004, Microfiber cleaning cloth, "pack of 12, size 32 x 32", £11.99, 50, household cleaning, "data/images/004.jpg"
+005, Floor Cleaner, "Residue-free surface cleaner", £1.90, 100, household cleaning, "data/images/005.avif"
+006, Kitchen Cleaner, "Daily kitchen cleaner, 750 ml", £2.75, 35, household cleaning, "data/images/006.avif"
+007, kitchen roll,"Kitchen Roll Extra absorpent", £3.65, 50, household cleaning, "data/images/007.jpg"
+008, sponge, "Non-scratch sponge", £4.80, 25, household cleaning, "data/images/008.jpg"
+009, washing up liquid, "Washing up liquid, 500ml", £2.25, 100, household cleaning, "data/images/009.jpg"
+010, Floor wipes, "Wet Floor Cleaning Wipes, Pack of 20", £4.50, 100, household cleaning, "data/images/010.jpg"
+011, Soap, "Luxuary bar of soap", £3.65, 100, Bathing & Toiletries, "data/images/011.jpg"
+012, Shampoo, "Hydrating Scalp Shampoo", £2.95, 100, Bathing & Toiletries, "data/images/012.jpg"
+013, Toilet Roll, "Toilet Roll, Pack of 3", £4.50, 100, Bathing & Toiletries, "data/images/013.jpg"
+014, Washing Hand Soap, "Washing hand soap, 300ml", £2.85, 100, Bathing & Toiletries, "data/images/014.jpg"
+015, Bathroom Cleaner, "Clean Living, Bathroom Cleaner Set", £5.50, 100, Bathing & Toiletries, "data/images/015.jpg"
+016, Bleach, "Killing 99.99% Bacteria, Clorox 500ml", £2.80, 100, Bathing & Toiletries, "data/images/016.jpg"
+017, Toilet Cleaning Set, "Toilet Cleaning Set", £6.50, 100, Bathing & Toiletries, "data/images/017.jpg"
+018, Box of Tissues, "Box of Tissues, 100 pcs", £2.40, 100, Bathing & Toiletries, "data/images/018.jpg"
+019, Bathroom Spray, "Bathroom Spray, 350ml", £3.20, 100, Bathing & Toiletries, "data/images/019.jpg"
+020, Hand sanitiser, "Hand Sanitiser, 50ml", £1.00, 100, Bathing & Toiletries, "data/images/020.jpg"
+021, Dustpan & Brush, "Durable Dustpan & Brush", £3, 100, Cleaning Tools, "data/images/021.jpg"
+022, Broom & packer, "Broom & Packer", £4, 100, Cleaning Tools, "data/images/022.jpg"
+023, Surgical mask, "Surgical mask/Cleaning mask, pack of 50", £10, 100, Cleaning Tools, "data/images/023.jpg"
+024, Reusable Bin Bag, "Reusable Bin Bag, pack of 20", £8.50, 100, Cleaning Tools, "data/images/024.jpg"
+025, Cleaning Apron, "Cleaning Apron", £1.35, 100, Cleaning Tools, "data/images/025.avif"
+026, Hoover, "Heavy Duty Hoover", £23.65, 100, Cleaning Tools, "data/images/026.avif"
+027, Cleaning Gloves, "Cleaning Gloves", £2.35, 100, Cleaning Tools, "data/images/027.jpg"
+028, Mop & Bucket, "Mop & Bucket", £5, 100, Cleaning Tools, "data/images/028.jpg"
+029, Duster Cleaning Set, "Duster Cleaning set", £4, 150, Cleaning Tools, "data/images/029.avif"
+030, Laundry Cleaning Set, "Laudry Cleaning Set," £5.50, 100, Cleaning Tools, "data/images/030.jpg"
