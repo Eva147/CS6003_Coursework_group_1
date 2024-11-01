@@ -6,12 +6,7 @@ const DataFetcher: React.FC = () => {
 
     useEffect(() => {
         axios.get("http://localhost:8080")
-            .then(
-                response => {
-                    setData(response.data);
-                    console.log(response.data);
-                },
-            )
+            .then(response => setData(response.data))
             .catch(error => console.error("Error fetching data:", error));
     }, []);
 
