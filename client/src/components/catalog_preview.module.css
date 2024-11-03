@@ -9,25 +9,27 @@
     background-position: center;
     background-repeat: no-repeat;
     align-items: start;
+    text-decoration: none;
+    color: inherit;
 
-    background-size: cover; /* Ensure the background covers the div */
-    background-position: center; /* Center the background image */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    position: relative; /* To position the pseudo-element for the shadow */
-    cursor: pointer; /* Change cursor to pointer */
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
     box-shadow: 0 1px 5px #674636;
 
 }
 
 .wrapper:hover {
-    box-shadow: 0 4px 15px #674636; /* Shadow effect */
+    box-shadow: 0 4px 15px #674636;
 }
 
 .wrapper:hover .title {
-    transform: scale(1.05); /* Slightly scale up the title on hover */
+    transform: scale(1.05);
 }
 
-.title {
+.wrapper .title {
     padding-top: 0.5rem;
     font-size: 1rem;
     font-weight: 400;

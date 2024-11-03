@@ -18,6 +18,7 @@ body {
   height: 100%;
   margin: 0;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  color: #674636;
 }
 
 .app {
@@ -28,20 +29,12 @@ body {
 
 .content {
   flex: 1;
+  margin-top: 5rem;
 }
 
-.helpIcon {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  font-size: 2rem; /* Adjust size as needed */
-  color: #AAB396;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.helpIcon:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
+a {
+  text-decoration: none;
+  color: #674636;
 }
 
 @media only screen and (max-width: 768px) {
