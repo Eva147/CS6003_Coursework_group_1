@@ -1,0 +1,96 @@
+.helpIcon {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #AAB396;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .helpIcon:hover {
+    transform: scale(1.1);
+  }
+
+/* .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  } */
+
+  .modal {
+    position: fixed;
+    bottom: 1rem;
+    right: 3rem;
+    background: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .chatTitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .chatText {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .chatContent {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 10px;
+  }
+
+  .input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    margin-right: 8px;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .inputField:focus {
+    border-color: #F7EED3;
+    box-shadow: 0 0 5px #F7EED3;
+  }
+
+  .sendButton {
+    padding: 8px 16px;
+    background-color: #AAB396;
+    color: #674636;
+    border: #674636;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+  }
+
+  .sendButton:hover {
+    background-color: #F7EED3;
+  }

@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.ad {
+    width: 100%;
+    height: 15rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/*
+.catalogs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+} */
