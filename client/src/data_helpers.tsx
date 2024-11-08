@@ -1,3 +1,4 @@
+
 import bathroomToiletries from './images/1.jpg';
 import cleaningTools from './images/2.jpg';
 import cleaningProducts from './images/3.jpg';
@@ -143,4 +144,5 @@ export const catalogData: ProductData[] = [
         "catalog_id": "3",
         "image": productEleven,
     },
-];
+]
+
