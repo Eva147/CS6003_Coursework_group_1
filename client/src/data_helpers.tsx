@@ -22,8 +22,15 @@ import productEighteen from './images/018.jpg';
 import productNineteen from './images/019.jpg';
 import productTwenty from './images/020.jpg';
 import { ProductData } from './components/product_preview';
-
+// localhost:3000/
 // list of catalogs for the home page
+// I have a db in .csv format and I need to send data from this db to the front end and the front end
+// gets the data through axios. I need to send the data in JSON format.
+
+// 4 diff types of users
+// @gmail.com - user
+// @cbc.gmail.com - sales, staff
+// @deliveryguy.com - delivery
 export const catalogsPreviewData = [
     {
         "id": "1",
