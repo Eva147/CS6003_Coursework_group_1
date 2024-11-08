@@ -11,6 +11,7 @@ public class HomeController {
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/")
     @ResponseBody
+    
     public String home() {
         return "Welcome to the Home Page!";
     }
