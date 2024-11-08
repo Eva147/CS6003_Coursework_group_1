@@ -26,6 +26,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     axios
       .get("http://localhost:8080")
       .then(response => {
+        console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       })
