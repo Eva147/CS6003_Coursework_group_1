@@ -1,27 +1,34 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useData } from '../../hooks/useData';
+import { useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import { catalogData } from '../../data_helpers';
 
 // styles
 import classes from './catalog.module.css';
 
-export interface ProductData {
-    product_id: string;
-    name: string;
-    description: string;
-    price: string;
-    quantity: number;
-    catalog_id: string;
-    image: string;
-}
-
 export default function Catalog() {
-    // const { data, isLoading, error } = useData();
+    const { catalogId } = useParams<{ catalogId: string }>();
+    const { products, isLoading, error, fetchProductsByCatalogById } = useData();
+
+    useEffect(() => {
+        if (catalogId) {
+            fetchProductsByCatalogById(catalogId);
+        }
+      }, [catalogId]);
+
+      if (isLoading) {
+        return <div>Loading...</div>;
+      }
+
+      if (error) {
+        return <div>{error}</div>;
+      }
 
     return (
         <div className={classes.wrapper}>
-        {catalogData.map((product) => (
-            <NavLink to={`/${product.catalog_id}/${product.product_id}`}>
+        {products.map((product) => (
+            <NavLink key={product.id} to={`/${product.id}`}>
                 <div className={classes.item} style={{ backgroundImage: `url(${product.image})` }} />
                 <div className={classes.info}>
                     <div className={classes.title}>{product.name}</div>

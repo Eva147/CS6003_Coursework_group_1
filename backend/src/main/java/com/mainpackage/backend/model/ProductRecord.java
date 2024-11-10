@@ -1,7 +1,7 @@
 package com.mainpackage.backend.model;
 
 public class ProductRecord {
-    private String productId;
+    private String id;
     private String name;
     private String description;
     private String price;
@@ -13,8 +13,8 @@ public class ProductRecord {
     public ProductRecord() {}
 
     // Constructor with all parameters
-    public ProductRecord(String productId, String name, String description, String price, int quantity, String catalogId, String image) {
-        this.productId = productId;
+    public ProductRecord(String id, String name, String description, String price, int quantity, String catalogId, String image) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -25,11 +25,11 @@ public class ProductRecord {
 
     // Getters and Setters
     public String getProductId() {
-        return productId;
+        return id;
     }
 
     public void setProductId(String productId) {
-        this.productId = productId;
+        this.id = productId;
     }
 
     public String getName() {
