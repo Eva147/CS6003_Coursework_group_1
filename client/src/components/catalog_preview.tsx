@@ -13,8 +13,16 @@ export default function CatalogPreview(props: CatalogPreviewProps) {
     const { id, name, imageUrl } = props;
 
     return (
-        <NavLink to={`/${id}`} className={classes.wrapper} style={{ backgroundImage: `url(${imageUrl})` }}>
-            <div className={classes.title}>{name}</div>
-        </NavLink>
+        <article className={classes.item}>
+            <NavLink to={`/${id}`} className={classes.wrapper} aria-label={`Browse ${name} catalog`}>
+                <div
+                    className={classes.image}
+                    style={{ backgroundImage: `url(${imageUrl})` }}
+                    role="img"
+                    aria-label={`${name} catalog image`}
+                />
+                <h2 className={classes.title}>{name}</h2>
+            </NavLink>
+        </article>
     );
 }

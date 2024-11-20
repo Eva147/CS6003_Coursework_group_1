@@ -156,20 +156,6 @@
 
 // Delete after fixes!!!!!!!!!!!!!!!!!!
 export const data = [
-    {
-        "id": "1",
-        "name": "Bathroom Toiletries",
-        "image": "1.jpg",
-    },
-    {
-        "id": "2",
-        "name": "Cleaning Products",
-        "image": "2.jpg",
-    },
-    {
-        "id": "3",
-        "name": "Household Cleaning",
-        "image": "3.jpg",
-    }
+    {}
 ];
 

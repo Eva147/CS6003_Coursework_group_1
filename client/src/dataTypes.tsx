@@ -5,11 +5,23 @@ export interface Catalog {
 }
 
 export interface Product {
-    id: string;
+    productId: string;
     name: string;
     description: string;
     price: string;
     quantity: number;
     catalogId: string;
     image: string;
+}
+
+export interface User {
+    email: string;
+    password?: string;
+    name?: string;
+}
+
+export interface AuthResponse {
+    success: boolean;
+    message: string;
+    user?: User;
 }

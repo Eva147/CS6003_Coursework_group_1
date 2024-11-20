@@ -16,11 +16,15 @@ import org.springframework.stereotype.Service;
 import com.mainpackage.backend.model.CategoryRecord;
 import com.mainpackage.backend.model.ProductRecord;
 
+import com.mainpackage.backend.model.UserRecord;
+
+
 @Service
 public class CSVService {
 
     private static final String PRODUCT_CSV_FILE_PATH = "../data/products.csv";
     private static final String CATEGORY_CSV_FILE_PATH = "../data/categories.csv";
+    private static final String USER_CSV_FILE_PATH = "../data/users.csv";
 
     public List<ProductRecord> getProducts() throws IOException {
         List<ProductRecord> products = new ArrayList<>();
@@ -73,6 +77,26 @@ public class CSVService {
         return categories;
     }
 
+    public List<UserRecord> getUsers() throws IOException {
+        List<UserRecord> users = new ArrayList<UserRecord>();
+
+        try (Reader reader = Files.newBufferedReader(Paths.get(USER_CSV_FILE_PATH));
+                CSVParser csvParser = CSVFormat.Builder.create()
+                        .setHeader("email", "password", "name")
+                        .setSkipHeaderRecord(true)
+                        .build()
+                        .parse(reader)) {
+            for (CSVRecord csvRecord : csvParser) {
+                UserRecord user = new UserRecord(
+                        csvRecord.get("email"),
+                        csvRecord.get("password"),
+                        csvRecord.get("name"));
+                users.add(user);
+            }
+        }
+
+        return users;
+    }
 
     public List<ProductRecord> getProductsByCatalogId(String catalogId) throws IOException {
         List<ProductRecord> allProducts = getProducts();

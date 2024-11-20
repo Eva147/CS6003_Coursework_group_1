@@ -12,10 +12,12 @@
     background-size: cover;
     background-position: center;
 }
-/*
-.catalogs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 
-} */
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 200;
+    width: 100%;
+    margin: 1rem auto 1rem;
+}

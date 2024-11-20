@@ -1,14 +1,12 @@
 import React from 'react'
-import imageUrl from './../images/ad_3.jpg'
 
-//styles
 import classes from './footer.module.css';
 
 
 export default function Navbar() {
     return (
-    <div className={classes.footer}>
-        <div className={classes.ad} style={{ backgroundImage: `url(${imageUrl})` }}></div>
-    </div>
+    <footer role="contentinfo" className={classes.footer}>
+        <div className={classes.text}>©2024 Created by Group 1.</div>
+    </footer>
     )
 }

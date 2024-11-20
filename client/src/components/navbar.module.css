@@ -2,7 +2,7 @@
     width: 100%;
     position: fixed;
     z-index: 100;
-    background: #AAB396;
+    background: #7A8268;
     margin-bottom: 2rem;
 }
 
@@ -21,16 +21,39 @@
   font-family: "Amatic SC", sans-serif;
   font-weight: 500;
   font-style: normal;
-  color: #FFF8E8;
+  color: #FFF;
   letter-spacing: 5px;
   margin-right: auto;
   text-decoration: none;
 }
 
 .loginBtn {
-    color: #674636;
+    color: #FFF;
     font-size: small;
     text-decoration: none;
     list-style: none;
-    padding-left: 0.5rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.cartIcon {
+  color: #FFF;
+  padding: 0.5rem 0.5rem 0.2rem;
+  cursor: pointer;
+}
+
+.navItem:focus,
+.loginBtn:focus,
+.navbar a.brand:focus {
+  outline: none;
+}
+
+.navItem:focus-visible,
+.loginBtn:focus-visible,
+.navbar a.brand:focus-visible {
+  background-color: #4d3322;
+}
+
+.user {
+  color: #FFF;
+  margin-right: 2rem;
 }

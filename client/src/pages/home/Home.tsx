@@ -18,12 +18,15 @@ export default function Home() {
     }
 
     return (
-        <div className={classes.wrapper}>
-            {data && Array.isArray(data) && data.map((catalog) => (
-                <div key={catalog.id} className={classes.catalogs}>
-                    <CatalogPreview id={catalog.id} name={catalog.category} imageUrl={catalog.image} />
-                </div>
-            ))}
-        </div>
+        <>
+            <div className={classes.title}>Catalogs</div>
+            <div className={classes.wrapper}>
+                {data && Array.isArray(data) && data.map((catalog) => (
+                    <div key={catalog.id} className={classes.catalogs}>
+                        <CatalogPreview id={catalog.id} name={catalog.category} imageUrl={catalog.image} />
+                    </div>
+                ))}
+            </div>
+        </>
     );
 }
