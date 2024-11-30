@@ -1,4 +1,5 @@
 /*
+
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -19,6 +20,7 @@ export default function Catalog() {
             setCatalogTitle(getCatalogTitleById(catalogId));
         }
       }, [catalogId]);
+      
 
       if (isLoading) {
         return <div>Loading...</div>;
@@ -56,7 +58,9 @@ export default function Catalog() {
         </main>
     );
 }
+
 */
+
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useData } from "../../hooks/useData";
@@ -68,13 +72,14 @@ import classes from "./catalog.module.css";
 export default function Catalog() {
   const { catalogId } = useParams<{ catalogId: string }>();
   const {
-    products, // Products fetched from the backend
+    products, // fetched products
     isLoading,
     error,
     fetchProductsByCatalogById,
     getCatalogTitleById,
   } = useData();
 
+  // Local state to manage sorted products
   const [sortedProducts, setSortedProducts] = useState(products || []);
   const [catalogTitle, setCatalogTitle] = useState<string | undefined>(undefined);
 
@@ -91,6 +96,7 @@ export default function Catalog() {
     setSortedProducts(products);
   }, [products]);
 
+  
   // Sorting functions
   const sortByPrice = () => {
     const sorted = [...sortedProducts].sort(
@@ -105,6 +111,8 @@ export default function Catalog() {
     );
     setSortedProducts(sorted);
   };
+
+  
 
   // Handle loading and error states
   if (isLoading) {
@@ -122,14 +130,14 @@ export default function Catalog() {
         <button
           className={classes.button}
           aria-label="Sort price"
-          onClick={sortByPrice}
+          onClick={sortByPrice} // Attach the sortByPrice function
         >
           Sort by price
         </button>
         <button
           className={classes.button}
           aria-label="Sort by name"
-          onClick={sortByName}
+          onClick={sortByName} // Attach the sortByName function
         >
           Sort by name
         </button>
@@ -165,3 +173,4 @@ export default function Catalog() {
     </main>
   );
 }
+
