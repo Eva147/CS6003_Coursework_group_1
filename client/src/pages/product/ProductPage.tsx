@@ -59,6 +59,7 @@ export default function ProductPage() {
 
                     <div className={classes.quantitySelector}>
                         <input
+                            data-test="product-quantity-input"
                             type="number"
                             value={quantity}
                             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -73,9 +74,9 @@ export default function ProductPage() {
                         />
                     </div>
 
-                    <button className={classes.button} onClick={handleClick} aria-label={`Add ${product.name} to cart`}>Add to Basket</button>
+                    <button data-test="add-to-cart-btn" className={classes.button} onClick={handleClick} aria-label={`Add ${product.name} to cart`}>Add to Basket</button>
                     {alert && <div className={classes.alert}>{`Please choose maximum ${product?.quantity} items`}</div>}
-                    {added && <div className={classes.message}>{`Product${quantity > 1 ? "s" : ""} added to your Basket`}</div>}
+                    {added && <div data-test="product-added-message" className={classes.message}>{`Product${quantity > 1 ? "s" : ""} added to your Basket`}</div>}
                 </div>
             </div>
         </article>

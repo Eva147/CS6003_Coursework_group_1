@@ -16,6 +16,7 @@ export default function CatalogPreview(props: CatalogPreviewProps) {
         <article className={classes.item}>
             <NavLink to={`/${id}`} className={classes.wrapper} aria-label={`Browse ${name} catalog`}>
                 <div
+                    data-test={`catalog-preview-item-${id}`}
                     className={classes.image}
                     style={{ backgroundImage: `url(${imageUrl})` }}
                     role="img"

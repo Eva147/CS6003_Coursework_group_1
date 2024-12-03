@@ -22,7 +22,7 @@ export default function Home() {
             <div className={classes.title}>Catalogs</div>
             <div className={classes.wrapper}>
                 {data && Array.isArray(data) && data.map((catalog) => (
-                    <div key={catalog.id} className={classes.catalogs}>
+                    <div key={catalog.id} className={classes.catalogs} data-test="catalog-preview">
                         <CatalogPreview id={catalog.id} name={catalog.category} imageUrl={catalog.image} />
                     </div>
                 ))}

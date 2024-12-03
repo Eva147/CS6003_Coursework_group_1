@@ -36,7 +36,7 @@ export default function Catalog() {
                 </div>
             <div className={classes.wrapper} aria-label={`Products in ${catalogTitle}`}>
                 {products.map((product) => (
-                    <NavLink key={product.productId} to={`${product.productId}`} aria-label={`${product.name}, Price: £${product.price}`}>
+                    <NavLink data-test={`product-preview-${product.productId}`} key={product.productId} to={`${product.productId}`} aria-label={`${product.name}, Price: £${product.price}`}>
                         <article>
                             <div className={classes.item} style={{ backgroundImage: `url(${product.image})` }} aria-label={product.name} />
                             <div className={classes.info}>
