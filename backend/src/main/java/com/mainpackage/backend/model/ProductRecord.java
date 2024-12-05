@@ -4,7 +4,7 @@ public class ProductRecord {
     private String id;
     private String name;
     private String description;
-    private String price;
+    private Float price;
     private int quantity;
     private String catalogId;
     private String image;
@@ -13,7 +13,7 @@ public class ProductRecord {
     public ProductRecord() {}
 
     // Constructor with all parameters
-    public ProductRecord(String id, String name, String description, String price, int quantity, String catalogId, String image) {
+    public ProductRecord(String id, String name, String description, Float price, int quantity, String catalogId, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -48,11 +48,11 @@ public class ProductRecord {
         this.description = description;
     }
 
-    public String getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 

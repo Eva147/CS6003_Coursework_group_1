@@ -7,6 +7,7 @@ import { Catalog } from '../dataTypes';
 export type DataContextType = {
   data: Catalog[] | null;
   products: Product[];
+  sortedProducts: Product[];
   isLoading: boolean;
   error: string | null;
   user: User | null;
@@ -14,6 +15,7 @@ export type DataContextType = {
   fetchProductsByCatalogById: (catalogId: string) => void;
   getProductById: (productId: string) => Product | undefined;
   getCatalogTitleById: (catalogId: string) => string | undefined;
+  getSortedProducts: (catalogId: string, sortParameter: string) => void;
   loginUser: (userData: User) => Promise<AuthResponse>;
   logoutUser: () => void;
 };
@@ -21,6 +23,7 @@ export type DataContextType = {
 export const DataContext = createContext<DataContextType>({
   data: [],
   products: [],
+  sortedProducts: [],
   isLoading: true,
   error: null,
   user: null,
@@ -28,6 +31,7 @@ export const DataContext = createContext<DataContextType>({
   fetchProductsByCatalogById: () => {},
   getProductById: (productId: string) => undefined,
   getCatalogTitleById: (catalogId: string) => undefined,
+  getSortedProducts: (catalogId: string, sortParameter: string) => {},
   loginUser: (userData: User) => Promise.resolve({
     success: false,
     message: 'Login not implemented'
@@ -43,6 +47,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
   const [data, setData] = useState<Catalog[] | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
   const [currentProduct, setCurrentProduct] = useState<Product | null>(null);
+  const [sortedProducts, setSortedProducts] = useState(products);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
@@ -87,6 +92,21 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     return data?.find(catalog => catalog.id === catalogId)?.category;
   };
 
+  const getSortedProducts = (catalogId: string, sortParameter: string) => {
+    setIsLoading(true);
+    axios
+      .get(`http://localhost:8080/${catalogId}/${sortParameter}`)
+      .then(response => {
+        setSortedProducts(response.data);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        console.error(`Error fetching data for catalog ${catalogId}:`, error);
+        setError("Error fetching catalog data");
+        setIsLoading(false);
+      });
+  }
+
   const loginUser = async (userData: User): Promise<AuthResponse> => {
     setIsLoading(true);
     try {
@@ -130,11 +150,13 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     <DataContext.Provider value={{
       data,
       products,
+      sortedProducts,
       isLoading,
       error,
       fetchProductsByCatalogById,
       getProductById,
       getCatalogTitleById,
+      getSortedProducts,
       user,
       isAuthenticated,
       loginUser,

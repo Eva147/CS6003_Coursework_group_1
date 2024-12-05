@@ -5,6 +5,7 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,7 +27,35 @@ public class CSVService {
     private static final String CATEGORY_CSV_FILE_PATH = "../data/categories.csv";
     private static final String USER_CSV_FILE_PATH = "../data/users.csv";
 
+    private static List<ProductRecord> products = null;
+    private static List<CategoryRecord> categories = null;
+    private static List<UserRecord> users = null;
+
     public List<ProductRecord> getProducts() throws IOException {
+        return CSVService.products;
+    }
+
+    public static void setProducts(List<ProductRecord> products) {
+        CSVService.products = products;
+    }
+
+    public List<CategoryRecord> getCategories() throws IOException {
+        return CSVService.categories;
+    }
+
+    public static void setCategories(List<CategoryRecord> categories) {
+        CSVService.categories = categories;
+    }
+
+    public List<UserRecord> getUsers() throws IOException {
+        return CSVService.users;
+    }
+
+    public static void setUsers(List<UserRecord> users) {
+        CSVService.users = users;
+    }
+
+    public static void readProductsFromCSV() throws IOException {
         List<ProductRecord> products = new ArrayList<>();
 
         try (Reader reader = Files.newBufferedReader(Paths.get(PRODUCT_CSV_FILE_PATH));
@@ -41,7 +70,7 @@ public class CSVService {
                     csvRecord.get("id"),
                     csvRecord.get("name"),
                     csvRecord.get("description"),
-                    csvRecord.get("price"),
+                    Float.parseFloat(csvRecord.get("price")),
                     Integer.parseInt(csvRecord.get("quantity")),
                     csvRecord.get("catalogId"),
                     csvRecord.get("image")
@@ -49,10 +78,11 @@ public class CSVService {
                 products.add(product);
             }
         }
-        return products;
+        CSVService.setProducts(products);
+        return;
     }
 
-    public List<CategoryRecord> getCategories() throws IOException {
+    public static void readCategoriesFromCSV() throws IOException {
         List<CategoryRecord> categories = new ArrayList<CategoryRecord>();
 
         try (Reader reader = Files.newBufferedReader(Paths.get(CATEGORY_CSV_FILE_PATH));
@@ -74,10 +104,11 @@ public class CSVService {
                 System.err.println("Error reading categories CSV file: " + e.getMessage());
                 throw e;
         }
-        return categories;
+        CSVService.setCategories(categories);
+        return;
     }
 
-    public List<UserRecord> getUsers() throws IOException {
+    public static void readUsersFromCSV() throws IOException {
         List<UserRecord> users = new ArrayList<UserRecord>();
 
         try (Reader reader = Files.newBufferedReader(Paths.get(USER_CSV_FILE_PATH));
@@ -94,17 +125,33 @@ public class CSVService {
                 users.add(user);
             }
         }
-
-        return users;
+        CSVService.setUsers(users);
+        return;
     }
 
     public List<ProductRecord> getProductsByCatalogId(String catalogId) throws IOException {
-        List<ProductRecord> allProducts = getProducts();
+        List<ProductRecord> allProducts = this.getProducts();
 
         List<ProductRecord> filteredProducts = allProducts.stream()
             .filter(product -> catalogId.equals(product.getCatalogId()))
             .collect(Collectors.toList());
 
         return filteredProducts;
+    }
+
+    public List<ProductRecord> getProductRecordsSortedByPrice(String catalogId) throws IOException {
+        List<ProductRecord> allProducts = getProductsByCatalogId(catalogId);
+
+        allProducts.sort((a, b) -> a.getPrice().compareTo(b.getPrice()));
+
+        return allProducts;
+    }
+
+    public List<ProductRecord> getProductRecordsSortedByName(String catalogId) throws IOException {
+        List<ProductRecord> allProducts = getProductsByCatalogId(catalogId);
+
+        allProducts.sort((a, b) -> a.getName().compareTo(b.getName()));
+
+        return allProducts;
     }
 }

@@ -55,13 +55,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	 <dependency>
+		<dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
             <version>1.9.0</version>
         </dependency>
-
-			</dependencies>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

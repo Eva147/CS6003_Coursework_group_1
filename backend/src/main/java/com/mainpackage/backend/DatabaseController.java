@@ -3,7 +3,6 @@ package com.mainpackage.backend;
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -80,6 +79,24 @@ public class DatabaseController {
     public List<ProductRecord> getProductsByCatalogId(@PathVariable String catalogId) throws IOException {
         try {
             return csvService.getProductsByCatalogId(catalogId);
+        } catch (Exception e) {
+            System.err.println("Error fetching products for catalog ID " + catalogId + ": " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    @GetMapping("/{catalogId}/{sortBy}")
+    public List<ProductRecord> getProductsByCatalogIdSorted(@PathVariable String catalogId, @PathVariable String sortBy) throws IOException {
+        try {
+            switch (sortBy) {
+                case "price":
+                    return csvService.getProductRecordsSortedByPrice(catalogId);
+                case "name":
+                    return csvService.getProductRecordsSortedByName(catalogId);
+                default:
+                    return csvService.getProductsByCatalogId(catalogId);
+            }
         } catch (Exception e) {
             System.err.println("Error fetching products for catalog ID " + catalogId + ": " + e.getMessage());
             e.printStackTrace();

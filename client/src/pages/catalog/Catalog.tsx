@@ -9,15 +9,22 @@ import classes from './catalog.module.css';
 
 export default function Catalog() {
     const { catalogId } = useParams<{ catalogId: string }>();
-    const { products, isLoading, error, fetchProductsByCatalogById, getCatalogTitleById } = useData();
+    const { products, sortedProducts, isLoading, error, fetchProductsByCatalogById, getCatalogTitleById, getSortedProducts } = useData();
     const [catalogTitle, setCatalogTitle] = React.useState<string | undefined>(undefined);
+    const [sortParameter, setSortParameter] = React.useState<"name" | "price">("price");
 
     useEffect(() => {
         if (catalogId) {
             fetchProductsByCatalogById(catalogId);
             setCatalogTitle(getCatalogTitleById(catalogId));
         }
-      }, [catalogId]);
+    }, [catalogId]);
+
+     useEffect(() => {
+        if (catalogId) {
+            getSortedProducts(catalogId, sortParameter);
+        }
+     }, [sortParameter]);
 
       if (isLoading) {
         return <div>Loading...</div>;
@@ -31,11 +38,11 @@ export default function Catalog() {
         <main>
             <div className={classes.pageTitle}>{catalogTitle}</div>
                 <div className={classes.sortMenu} aria-label="Sort products">
-                    <button className={classes.button} aria-label="Sort price">Sort by price</button>
-                    <button className={classes.button} aria-label="Sort by name">Sort by name</button>
+                    <button className={classes.button} aria-label="Sort price" onClick={() => setSortParameter("price")}>Sort by price</button>
+                    <button className={classes.button} aria-label="Sort by name" onClick={() => setSortParameter("name")}>Sort by name</button>
                 </div>
             <div className={classes.wrapper} aria-label={`Products in ${catalogTitle}`}>
-                {products.map((product) => (
+                {sortedProducts.map((product) => (
                     <NavLink data-test={`product-preview-${product.productId}`} key={product.productId} to={`${product.productId}`} aria-label={`${product.name}, Price: £${product.price}`}>
                         <article>
                             <div className={classes.item} style={{ backgroundImage: `url(${product.image})` }} aria-label={product.name} />
