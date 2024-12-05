@@ -59,23 +59,19 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
             <version>1.9.0</version>
-<<<<<<< HEAD
-        </dependency>
-=======
 		</dependency>
-	 <dependency>	
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>5.10.0</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency> 		
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.4.0</version>
-			<scope>test</scope>
-		</dependency>
->>>>>>> 9498f5fa3d8ac3eb2b31b9b42919e7510bc95671
+	<dependency>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter</artifactId>
+		<version>5.10.0</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.testng</groupId>
+		<artifactId>testng</artifactId>
+		<version>7.4.0</version>
+		<scope>test</scope>
+	</dependency>
 	</dependencies>
 	<build>
 		<plugins>
