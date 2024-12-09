@@ -11,6 +11,7 @@ import classes from './chat.module.css';
 export default function Navbar() {
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [isMassageSent, setIsMessageSent] = useState(false);
+    console.log(isChatOpen);
 
     const toggleChat = () => {
         setIsChatOpen(!isChatOpen);

@@ -5,8 +5,8 @@ import Footer from './components/footer'
 import Chat from './components/chat'
 import Catalog from './pages/catalog/Catalog'
 import ProductPage from './pages/product/ProductPage'
-import Cart from './pages/cart/cart'
-import Login from './pages/auth/login'
+import Cart from './pages/cart/Cart';
+import Login from './pages/auth/Login';
 
 // page components
 import Home from './pages/home/Home'

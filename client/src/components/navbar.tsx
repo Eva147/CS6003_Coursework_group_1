@@ -23,7 +23,7 @@ export default function Navbar() {
             <>
                 {isAuthenticated && <p className={classes.user}>Hello, {userName}</p>}
                 <NavLink to="/cart" className={classes.navItem}>
-                <ShoppingCartIcon className={classes.cartIcon}/>
+                    <ShoppingCartIcon className={classes.cartIcon}/>
                 </NavLink>
                 <NavLink to="/login" className={classes.loginBtn}>Login</NavLink>
                 <NavLink to="/" className={classes.loginBtn} onClick={handleLogout}>Logout</NavLink>
