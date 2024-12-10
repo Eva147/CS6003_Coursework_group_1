@@ -11,7 +11,6 @@ import classes from './chat.module.css';
 export default function Navbar() {
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [isMassageSent, setIsMessageSent] = useState(false);
-    console.log(isChatOpen);
 
     const toggleChat = () => {
         setIsChatOpen(!isChatOpen);
@@ -35,8 +34,8 @@ export default function Navbar() {
             }
 
             {isChatOpen &&
-                <div className={classes.overlay}>
-                    <div className={classes.modal}>
+                <div>
+                    <div className={classes.chatWindow}>
                         <div className={classes.chatTitle}>Chat with us</div>
                         <div className={classes.chatContent}>
                             {!isMassageSent

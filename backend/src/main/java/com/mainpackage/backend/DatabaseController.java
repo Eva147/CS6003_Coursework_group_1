@@ -43,25 +43,19 @@ public class DatabaseController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) throws IOException {
-        System.out.println("Login request received: " + loginRequest.getEmail());
-        System.out.println("Login request received: " + loginRequest.getPassword());
         try {
             List<UserRecord> users = csvService.getUsers();
             boolean loggedIn = false;
             UserRecord loggedInUser = null;
             for (UserRecord user : users) {
-                System.out.println("User email: " + user.getEmail());
-                System.out.println("User password: " + user.getPassword());
                 boolean emailMatch = user.getEmail().equals(loginRequest.getEmail());
                 boolean passwordMatch = user.getPassword().equals(loginRequest.getPassword());
                 if (emailMatch && passwordMatch) {
-                    System.out.println("Match found");
                     loggedInUser = user;
                     loggedIn = true;
                     break;
                 }
             }
-            System.out.println("Logged in: " + loggedIn);
             if (loggedIn && loggedInUser != null) {
                 String responseString = loggedInUser.toString();
                 return ResponseEntity.ok(responseString);

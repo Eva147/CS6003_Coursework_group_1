@@ -109,33 +109,48 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 
   const loginUser = async (userData: User): Promise<AuthResponse> => {
     setIsLoading(true);
+    setError('');
+    setUser(null);
+    setIsAuthenticated(false);
     try {
         const response = await axios.post('http://localhost:8080/login', userData);
-        const userRecord = {
-          email: response.data.split("'")[1],
-          name: response.data.split("'")[5]
-      };
 
-        if (response.data) {
-            setUser(userRecord);
-            setIsAuthenticated(true);
-            return {
+        if(response?.data) {
+          try {
+            const userRecord = {
+              email: response.data.split("'")[1],
+              name: response.data.split("'")[5]
+            };
+            if (response.data) {
+              setUser(userRecord);
+              setIsAuthenticated(true);
+              return {
                 success: true,
                 message: 'Login successful',
-            };
-        } else {
-            console.log('Login failed:', response.data.message);
+              };
+          }
+          } catch (parseError) {
+            console.error('Error parsing data:', parseError);
+            setError('Error processing server response');
             return {
-                success: false,
-                message: response.data.message || 'Login failed'
+              success: false,
+              message: 'Error processing server response'
             };
+          }
         }
+
+        setError('Login failed. Invalid response from the server');
+        return {
+            success: false,
+            message: response.data.message || 'Login failed'
+        };
     } catch (err) {
         setError('Login failed');
         return {
             success: false,
             message: 'Login failed'
         };
+
     } finally {
         setIsLoading(false);
     }

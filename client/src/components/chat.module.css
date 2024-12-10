@@ -13,7 +13,8 @@
     transform: scale(1.1);
   }
 
-  .modal {
+  .chatWindow {
+    z-index: 1000;
     position: fixed;
     bottom: 1rem;
     right: 3rem;
@@ -59,7 +60,7 @@
     border-radius: 4px;
     font-size: 1rem;
     outline: none;
-    margin-right: 8px;
+    margin: 8px 8px 8px 4px;
     transition: box-shadow 0.2s ease;
   }
 
@@ -80,4 +81,14 @@
 
   .sendButton:hover {
     background-color: #F7EED3;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .chatWindow {
+      bottom: 3rem;
+      right: 3rem;
+      padding: 10px;
+      width: 60%;
+      /* max-width: 220px; */
+    }
   }

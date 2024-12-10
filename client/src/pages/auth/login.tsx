@@ -23,7 +23,6 @@ export default function Login() {
             };
 
             const response = await loginUser(userData);
-
             if (response.success) {
                 navigate('/');
             } else {
