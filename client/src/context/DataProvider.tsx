@@ -53,6 +53,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // initial data fetch for the main page(catalogues preview)
   useEffect(() => {
     setIsLoading(true);
     axios
@@ -67,6 +68,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
       });
   }, []);
 
+  // fetch products by catalog id
   const fetchProductsByCatalogById = (catalogId: string) => {
     setIsLoading(true);
     axios
@@ -168,12 +170,12 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
       sortedProducts,
       isLoading,
       error,
+      user,
+      isAuthenticated,
       fetchProductsByCatalogById,
       getProductById,
       getCatalogTitleById,
       getSortedProducts,
-      user,
-      isAuthenticated,
       loginUser,
       logoutUser
       }}>

@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import CloseIcon from '@mui/icons-material/Close';
 
-
 //styles
 import classes from './chat.module.css';
 
